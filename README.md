@@ -5,15 +5,17 @@
 
 ## Alias
 ```sh
+work_dir="~/Workspace/extensions-source/"
 alias code="flatpak run com.visualstudio.code $* 2> /dev/null"
 alias idea="flatpak run com.jetbrains.IntelliJ-IDEA-Community $* 2> /dev/null"
 alias presenterm="~/.asdf/installs/rust/1.75/bin/presenterm"
 alias neofetch="hyfetch"
-alias e="cd ~/Workspace/extensions-source/"
-alias edit="micro ~/Workspace/extensions-source/.git/info/sparse-checkout"
+alias e="cd $work_dir"
+alias u="sh -c 'cd $work_dir && cbch=$(git branch --show-current) && git switch main && git pull && git switch $cbch && git rebase main'"
+alias edit="micro $work_dir.git/info/sparse-checkout"
 alias files="nautilus"
 alias arm="rm ~/.var/app/com.google.AndroidStudio/config/Google/AndroidStudio*/.lock"
-alias open='xdg-open $1 2> /dev/null'
+alias open="xdg-open $1 2> /dev/null"
 ```
 <!--
 alias ai='podman ps --format "{{.Names}}" | grep -q "^open-webui$" && { podman stop open-webui; echo "AI encerrada"; } || { podman start open-webui; echo "Iniciando AI..." ; sleep 5; flatpak run org.mozilla.firefox http://localhost:8080 1> /dev/null & }'
