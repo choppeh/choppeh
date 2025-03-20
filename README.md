@@ -15,6 +15,7 @@ alias edit="micro ~/Workspace/extensions-source/info/sparse-checkout"
 alias files="nautilus"
 alias arm="rm ~/.var/app/com.google.AndroidStudio/config/Google/AndroidStudio*/.lock"
 alias open="xdg-open $1 2> /dev/null"
+alias emu="~/Android/Sdk/./emulator/emulator -avd Pixel_3a_API_34 -gpu host"
 
 function u() {
   sh -c 'cd ~/Workspace/extensions-source/ && cbch=$(git branch --show-current) && echo $cbch && git switch main && git pull && git switch $cbch && git rebase main'
